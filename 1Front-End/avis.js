@@ -42,7 +42,7 @@ export function ajoutListenersAvis() {
             if (avisPieces) {
                 avis = JSON.parse(avisPieces)
             } else {
-                const r = await fetch(`http://localhost:8082/pieces/${id}/avis`)
+                const r = await fetch(`https://sitelesbonnespieces.onrender.com/pieces/${id}/avis`)
                 avis = await r.json()
                 window.localStorage.setItem(`avis-pieces${id}`, JSON.stringify(avis))
             }
@@ -86,7 +86,7 @@ export function envoyerAvis() {
             body: afficherAvis
         })
         //recupere dans le serveur tout les avis qui correspondent a pieceId ex: si pieceId = 3 recupere tous les avis de la piece 3
-        const r = await fetch(`http://localhost:8082/pieces/${avis.pieceId}/avis`);
+        const r = await fetch(`https://sitelesbonnespieces.onrender.com/pieces/${avis.pieceId}/avis`);
         const avisActualises = await r.json();
         localStorage.setItem(`avis-pieces${avis.pieceId}`, JSON.stringify(avisActualises));//stocke les avis de cette piece dans mon localstorage ce qui permet la mise a jour
 
@@ -95,7 +95,7 @@ export function envoyerAvis() {
 
 
 export async function afficherGraphe() {
-    const avis = await fetch("http://localhost:8082/avis").then(avis => avis.json())
+    const avis = await fetch("https://sitelesbonnespieces.onrender.com/avis").then(avis => avis.json())
     const nb_commentaire = [0, 0, 0, 0, 0]
     for (let comentaire of avis) {
         nb_commentaire[comentaire.nbEtoiles - 1]++

@@ -1,7 +1,7 @@
 import { ajoutListenersAvis, envoyerAvis, afficherGraphe, } from "./avis.js"
 let pieces = localStorage.getItem("pieces")
 if (pieces === null) {
-    const response = await fetch("http://localhost:8082/pieces/")
+    const response = await fetch("https://sitelesbonnespieces.onrender.com/pieces/")
     pieces = await response.json()
 
     const valeurPieces = JSON.stringify(pieces)
