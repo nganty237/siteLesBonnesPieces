@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Les Bonnes Pièces</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script type="module" src="pieces.js"></script>
+	<script type="module" src="avis.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="images/logo-les-bonnes-pieces.png" alt="LOGO">
+		<h1>Les Bonnes Pièces</h1>
+	</header>
+	<main>
+		<!-- Menu de recherche -->
+		<section class="filtres">
+			<h3>Filtres</h3>
+			<button class="btn-trier">Trier par prix croissant</button>
+			<br>
+			<button class="btn-filtrer">Filtrer les pièces non abordables</button>
+			<br>
+			<button class="butd"> description</button>
+			<br>
+			<button class="buttorder">orderD</button>
+			<br>
+			<button class="butaccueil">produits accueil</button>
+			<div class="range">
+				<p>Prix maximum:</p>
+				<input type="range" id="prixMax" name="prixMax" min="0" max="60" step="5">
+			</div>
+			<h3>Ajouter un avis</h3>
+			<form action="" class="formulaire-avis">
+				Identifiant de la piece : <br>
+				<input type="number" name="piece-id" min="1"><br>
+				Nom utilisateur: <br>
+				<input type="text" name="utilisateur" id=""><br>
+				Avis : <br>
+				<input type="text" name="commentaire"><br>
+				<label for="">nombre d'etoiles:</label><br>
+				<input type="number" name="etoiles" class="nbreEtoiles" min="0" max="5"><br>
+				<button>ENVOYER</button><br>
+			</form>
+			<h3>Donnees</h3>
+			<button class="maj">Mise a jour</button><br>
+			<div>
+				<!-- <h3>Aperçu des avis</h3> -->
+				<canvas id="myChart" width="300" height="300"></canvas>
+			</div>
+			<div>
+				<canvas id="myChart1" width="300" height="300"></canvas>
+			</div>
+		</section>
+
+		<!-- Fiches produits -->
+		<section class="fiches">
+			<div class="abordable">
+				<h2>Pièces abordables</h2>
+			</div>
+			<div class="disponibles">
+				<h2>Pièces disponibles</h2>
+			</div>
+		</section>
+	</main>
+</body>
+
+</html>
