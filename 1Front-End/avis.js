@@ -78,7 +78,7 @@ export function envoyerAvis() {
         }
 
         const afficherAvis = JSON.stringify(avis)
-        await fetch("http://localhost:8082/avis", {
+        await fetch("https://sitelesbonnespieces.onrender.com/avis", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
