@@ -85,6 +85,7 @@ export function envoyerAvis() {
             },
             body: afficherAvis
         })
+        event.target.reset()
         //recupere dans le serveur tout les avis qui correspondent a pieceId ex: si pieceId = 3 recupere tous les avis de la piece 3
         const r = await fetch(`https://sitelesbonnespieces.onrender.com/pieces/${avis.pieceId}/avis`);
         const avisActualises = await r.json();
