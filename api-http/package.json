@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server db.json --host 0.0.0.0 --port 4000"
+    "start": "json-server db.json --host 0.0.0.0 --port 4000",
+    "lint": "eslint *.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chart.js": "^4.5.0",
     "json-server": "^0.17.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.31.0",
+    "globals": "^16.3.0"
   }
 }
